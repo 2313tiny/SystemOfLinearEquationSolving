@@ -1,0 +1,35 @@
+
+SRC := $(wildcard *.cpp)
+
+OBJ := $(patsubst %cpp, %.o, $(SRC))
+
+
+.PHONY: WELCOME
+.PHONY: RUN
+
+
+
+ALL:  WELCOME COMP  RUN 
+
+WELCOME:
+	clear
+	@echo  -e '\e[1;32;49m'
+	@echo "##################################################"
+	@echo "## SOLUTION OF  SYSTEM OF LINEAR EQUATION  #######"
+	@echo "##################################################"
+	@echo  -e '\e[0;0;49m'
+
+COMP:$(SRC) $(HEAD)
+	gcc $(SRC) -g -o project -lstdc++ 
+
+#COMP: $(OBJ) $(HEAD)
+#	gcc $^ -o $@ -lstdc++
+#%.o:%cpp
+#	gcc $< -c  -o $@	
+
+
+RUN:
+	./project
+	@echo " "
+	@echo "###############  DONE   v.1.01 ##################"
+

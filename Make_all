@@ -1,0 +1,38 @@
+
+SRC := $(wildcard *.cpp)
+HEAD := $(wildcard *.hpp)
+OBJ := $(patsubst %.cpp, %.o, $(SRC))
+PROJECT := project
+
+
+.PHONY: WELCOME
+.PHONY: RUN
+.PHONY: result
+
+all:WELCOME result
+
+WELCOME:
+	clear
+	@echo  -e '\e[1;32;49m'
+	@echo "##################################################"
+	@echo "## SOLUTION OF  SYSTEM OF LINEAR EQUATION  #######"
+	@echo "##################################################"
+	@echo  -e '\e[0;0;49m'
+
+
+result: $(OBJ) $(HEAD)
+	gcc $^ -o  result -lstdc++
+
+%.o : %.cpp
+#	@echo "time = "
+#	@echo `time` -t	
+#	x=`time`
+	gcc -c $<  -o $@ 
+#	y=`time`
+#	t=x-y
+#	@echo "Time for compilation of $^ file is $$t"
+
+
+clean:
+	rm -r *.o  result
+
