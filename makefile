@@ -4,8 +4,8 @@
 
 #sorry under construction
 # try again
-
-
+#just for test
+# I can not add something to file.... this is not good
 
 
 exe: JacobiMethod.o #readMatrixFromFile.o writeMatrixToFile.o\
