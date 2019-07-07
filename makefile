@@ -5,8 +5,7 @@
 #sorry under construction
 # try again
 #just for test
-# I can not add something to file.... this is not good
-
+# another test...
 
 exe: JacobiMethod.o #readMatrixFromFile.o writeMatrixToFile.o\
        	GaussMethod.o GenerateMatrix.o GaussSeidelMethod.o Project.o  
